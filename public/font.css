@@ -1,0 +1,24 @@
+@font-face {
+  font-family: Vazir;
+  src: url(fonts/Vazir.woff2);
+}
+
+@font-face {
+  font-family: Vazir-Thin;
+  src: url(fonts/Vazir-Thin.woff2);
+}
+
+@font-face {
+  font-family: Vazir-Light;
+  src: url(fonts/Vazir-Light.woff2);
+}
+
+@font-face {
+  font-family: Vazir-Medium;
+  src: url(fonts/Vazir-Medium.woff2);
+}
+
+@font-face {
+  font-family: Vazir-Bold;
+  src: url(fonts/Vazir-Bold.woff2);
+}
