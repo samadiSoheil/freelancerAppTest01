@@ -3,8 +3,9 @@ import SendOTPForm from "../features/auth/SendOTPForm";
 const Auth = () => {
   return (
     <>
-      <h1>this is Auth component</h1>
-      <SendOTPForm />
+      <div className="container w-full xl:max-w-xl h-screen flex flex-col justify-center items-center ba">
+        <SendOTPForm />
+      </div>
     </>
   );
 };

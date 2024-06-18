@@ -2,3 +2,30 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .textFiled__input {
+    @apply w-full py-3 px-4 rounded-xl text-secondary-900 border border-gray-300 bg-gray-100 focus:bg-white hover:border-primary-500 focus:border-primary-500 focus:shadow-lg focus:shadow-primary-200/70 duration-300 transition-all ease-out;
+  }
+  .btn {
+    @apply py-3 px-4 rounded-xl text-secondary-0 font-Vazir-Medium shadow-lg transition-all ease-out duration-300;
+  }
+  .btn--primery {
+    @apply bg-primary-900 hover:bg-primary-800  shadow-primary-300;
+  }
+  .btn--secondary {
+    @apply bg-secondary-800 hover:bg-secondary-700  shadow-secondary-300;
+  }
+}
+
+/*----------- --------------   CSS CLASS         ---------------------------- */
+
+* {
+  outline: none;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: theme("colors.slate.100");
+}
