@@ -1,4 +1,6 @@
 import { useState } from "react";
+import TextField from "../../ui/TextFIeld";
+import Button from "../../ui/Button";
 
 const SendOTPForm = () => {
   const [phoneNumber, setPhoneNumber] = useState(null);
@@ -6,18 +8,13 @@ const SendOTPForm = () => {
     <>
       <div className="w-full">
         <form className="space-y-5">
-          <div>
-            <label htmlFor="phoneNumber">شماره موبایل</label>
-            <input
-              value={phoneNumber}
-              onChange={(e) => setPhoneNumber(e.target.value)}
-              id="phoneNumber"
-              autoFocus="true"
-              type="text"
-              className="textFiled__input"
-            />
-          </div>
-          <button className="w-full btn btn--secondary">ارسال کد تایید</button>
+          <TextField
+            id="phoneNumber"
+            lableText="شماره موبایل"
+            elemValue={phoneNumber}
+            setElemVaulue={setPhoneNumber}
+          />
+          <Button>ارسال کد تایید</Button>
         </form>
       </div>
     </>
