@@ -16,11 +16,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/auth",
-    element: (
-      <QueryClientProvider client={queryClient}>
-        <Auth />
-      </QueryClientProvider>
-    ),
+    element: <Auth />,
   },
   {
     path: "/complete-profile",
@@ -29,7 +25,9 @@ const router = createBrowserRouter([
 ]);
 ReactDOM.createRoot(document.getElementById("root")).render(
   <>
-    <RouterProvider router={router} />
-    <Toaster />
+    <QueryClientProvider client={queryClient}>
+      <RouterProvider router={router} />
+      <Toaster />
+    </QueryClientProvider>
   </>
 );
