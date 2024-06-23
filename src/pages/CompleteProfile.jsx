@@ -3,7 +3,9 @@ import CompleteProfileForm from "../features/auth/CompleteProfileForm";
 const CompleteProfile = () => {
   return (
     <>
-      <CompleteProfileForm />
+      <div className="container w-full xl:max-w-xl h-screen flex flex-col justify-center items-center ba">
+        <CompleteProfileForm />
+      </div>
     </>
   );
 };
