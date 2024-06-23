@@ -7,3 +7,7 @@ export const getOtp = (userNumber) => {
 export const checkOtp = (data) => {
   return Http.post("/user/check-otp", data).then(({ data }) => data.data);
 };
+
+export const completeProfile = (data) => {
+  return Http.post("/user/complete-profile", data).then(({ data }) => data.data);
+};
