@@ -32,9 +32,27 @@ const CheckOTPForm = ({
       const { message, user } = await mutateAsync({ phoneNumber: phoneNumber, otp });
       toast.success(message);
       if (user.isActive) {
-        // todo push users to their pages [user,owner,freelancer]
+        if (user.status == 2) {
+          if (user.role === "OWNER") return navigateUser("/owner");
+          if (user.role === "FREELANCER") return navigateUser("/freelancer");
+        } else {
+          navigateUser("/");
+          toast((t) => {
+            return (
+              <span>
+                پروفایل شما در <b>لیست تایید توسط ادمین</b> قرار گرفت تا تایید پروفایلتان
+                شکیبا باشید.
+                <button
+                  className="w-full bg-secondary-800 text-secondary-0 py-3 mt-4"
+                  onClick={() => toast.dismiss(t.id)}
+                >
+                  متوجه شدم
+                </button>
+              </span>
+            );
+          });
+        }
       } else {
-        // todo push user to complete profile page
         navigateUser("/complete-profile");
       }
     } catch (error) {
