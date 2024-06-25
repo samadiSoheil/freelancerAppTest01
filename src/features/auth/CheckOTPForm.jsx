@@ -8,7 +8,7 @@ import Loading from "../../ui/Loading";
 import { FaLongArrowAltRight } from "react-icons/fa";
 import { MdEdit } from "react-icons/md";
 
-const OTP_EXPIRE_TIME = 20;
+const OTP_EXPIRE_TIME = 90;
 
 const CheckOTPForm = ({
   phoneNumber,
