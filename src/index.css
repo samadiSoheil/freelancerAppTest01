@@ -16,6 +16,12 @@
   .btn--secondary {
     @apply bg-secondary-800 hover:bg-secondary-700  shadow-secondary-300;
   }
+  .link {
+    @apply flex items-center gap-2 w-full hover:bg-secondary-200 p-3 rounded-lg transition-all duration-300;
+  }
+  .link__item .active {
+    @apply text-primary-900 bg-slate-200;
+  }
 }
 
 /*----------- --------------   CSS CLASS         ---------------------------- */
