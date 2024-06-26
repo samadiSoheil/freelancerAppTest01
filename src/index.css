@@ -16,11 +16,32 @@
   .btn--secondary {
     @apply bg-secondary-800 hover:bg-secondary-700  shadow-secondary-300;
   }
+  .btn--secondary__outline {
+    @apply border-2 border-red-600 text-red-700 shadow-red-100;
+  }
   .link {
     @apply flex items-center gap-2 w-full hover:bg-secondary-200 p-3 rounded-lg transition-all duration-300;
   }
   .link__item .active {
     @apply text-primary-900 bg-slate-200;
+  }
+  .projects-container__table {
+    @apply w-full border border-secondary-300 rounded-lg overflow-x-auto;
+  }
+  .projects__table {
+    @apply min-w-[1000px] w-full text-center  bg-secondary-0;
+  }
+  .projects__table-title {
+    @apply max-w-[300px] max-h-[35px] line-clamp-1 overflow-hidden;
+  }
+  .badge {
+    @apply h-[26px] flex items-center justify-center px-4 py-0.5 text-sm bg-secondary-200/70 rounded-full transition-all duration-300;
+  }
+  .badge--red {
+    @apply bg-red-200 text-red-700;
+  }
+  .badge--green {
+    @apply bg-green-200 text-green-600;
   }
 }
 
@@ -35,4 +56,23 @@
 body {
   background-color: theme("colors.slate.100");
   font-family: theme("fontFamily.Vazir");
+}
+
+tbody tr {
+  @apply hover:bg-slate-100/50 transition-all duration-300;
+}
+
+th {
+  @apply text-secondary-800;
+}
+
+tr td,
+th {
+  @apply p-3;
+}
+tbody tr {
+  @apply border-b;
+}
+tbody tr:last-child {
+  @apply border-b-0 !important;
 }
