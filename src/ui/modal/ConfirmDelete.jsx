@@ -1,4 +1,4 @@
-const ConfirmDelete = ({ title, onClose }) => {
+const ConfirmDelete = ({ title, onClose, deleteFunk }) => {
   return (
     <div className="pt-4">
       <div className="flex flex-col items-start gap-3 text-secondary-800 text-right">
@@ -12,7 +12,10 @@ const ConfirmDelete = ({ title, onClose }) => {
         >
           خیر
         </button>
-        <button className="btn btn--secondary__outline w-full font-Vazir-Bold">
+        <button
+          onClick={deleteFunk}
+          className="btn btn--secondary__outline w-full font-Vazir-Bold"
+        >
           بله
         </button>
       </div>
