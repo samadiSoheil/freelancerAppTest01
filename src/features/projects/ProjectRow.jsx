@@ -3,10 +3,12 @@ import { MdEdit } from "react-icons/md";
 import Modal from "../../ui/modal/Modal";
 import { useState } from "react";
 import ConfirmDelete from "../../ui/modal/ConfirmDelete";
+import { useDeleteProject } from "./useDeleteProject";
 
 const ProjectRow = ({ item, index }) => {
   const [isOpenDeleteMidal, setIsOpenDeleteModal] = useState(false);
   const [isOpenEditMidal, setIsOpenEditeModal] = useState(false);
+  const { deleteProject } = useDeleteProject();
 
   return (
     <>
@@ -57,6 +59,11 @@ const ProjectRow = ({ item, index }) => {
               <ConfirmDelete
                 title={` آیا از حذف پروژه ی ${item.title} مطمِن هستید؟`}
                 onClose={setIsOpenDeleteModal}
+                deleteFunk={() =>
+                  deleteProject(item._id, {
+                    onSuccess: () => setIsOpenDeleteModal(false),
+                  })
+                }
               />
             </Modal>
           </>
