@@ -3,7 +3,7 @@ import { getAllOwnerProjects } from "../../services/projectsService";
 
 export const useOwnerProject = () => {
   const { data, isPending } = useQuery({
-    queryKey: ["projects"],
+    queryKey: ["owner-projects"],
     queryFn: getAllOwnerProjects,
     retry: false,
   });
