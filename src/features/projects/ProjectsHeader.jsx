@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Modal from "../../ui/modal/Modal";
+import AddProjectForm from "./AddProjectForm";
 
 const ProjectsHeader = () => {
   const [isOpenModal, setIsOpenModal] = useState(false);
@@ -21,7 +22,9 @@ const ProjectsHeader = () => {
           onClose={setIsOpenModal}
           title="اضافه کردن پروژه جدید"
           typeOfModal="AddProject"
-        ></Modal>
+        >
+          <AddProjectForm />
+        </Modal>
       </div>
     </>
   );
