@@ -1,9 +1,8 @@
-import { useState } from "react";
 import TextField from "../../ui/TextFIeld";
 import Button from "../../ui/Button";
 import Loading from "../../ui/Loading";
 
-const SendOTPForm = ({ setPhoneNumber, phoneNumber, isPending, getOtpHandler }) => {
+const SendOTPForm = ({ register, isPending, getOtpHandler, errors }) => {
   return (
     <>
       <div className="w-full">
@@ -11,9 +10,21 @@ const SendOTPForm = ({ setPhoneNumber, phoneNumber, isPending, getOtpHandler }) 
           <TextField
             id="phoneNumber"
             lableText="شماره موبایل"
-            elemValue={phoneNumber}
-            setElemVaulue={setPhoneNumber}
             isFoucus={true}
+            register={register}
+            required
+            errors={errors}
+            errorValidation={{
+              required: "این فیلد اجباری است.",
+              minLength: {
+                value: 11,
+                message: "شماره حداقل باید 11 کاراکتر باشد",
+              },
+              maxLength: {
+                value: 11,
+                message: "شماره حداکثر باید 11 کاراکتر باشد",
+              },
+            }}
           />
           {isPending ? <Loading /> : <Button>ارسال کد تایید</Button>}
         </form>
