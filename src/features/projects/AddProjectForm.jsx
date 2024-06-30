@@ -5,10 +5,11 @@ import RHFSelectInput from "../../ui/RHFSelectInput";
 import { TagsInput } from "react-tag-input-component";
 import { useState } from "react";
 import DatePickerField from "../../ui/DatePickerField";
+import useCategory from "../../hook/useCategory";
 const AddProjectForm = () => {
   const [tags, setTags] = useState([]);
   const [date, setDate] = useState(new Date());
-
+  const { category } = useCategory();
   const {
     register,
     formState: { errors },
@@ -83,7 +84,7 @@ const AddProjectForm = () => {
           rejester={register}
           required
           errors={errors}
-          options={[]}
+          options={category}
         />
         <div className="space-y-3">
           <label>برچسب ها</label>
