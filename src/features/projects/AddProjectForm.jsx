@@ -2,7 +2,10 @@ import TextField from "../../ui/TextFIeld";
 import Button from "../../ui/Button";
 import { useForm } from "react-hook-form";
 import RHFSelectInput from "../../ui/RHFSelectInput";
+import { TagsInput } from "react-tag-input-component";
+import { useState } from "react";
 const AddProjectForm = () => {
+  const [tags, setTags] = useState([]);
   const {
     register,
     formState: { errors },
@@ -11,6 +14,7 @@ const AddProjectForm = () => {
 
   const submitHandler = (data) => {
     console.log(data);
+    console.log(tags);
   };
 
   return (
@@ -76,12 +80,16 @@ const AddProjectForm = () => {
           rejester={register}
           required
           errors={errors}
-          // options={[
-          // { label: "dwwdw", value: "dwwdw" },
-          // { label: "scfswf", value: "scfswf" },
-          // ]}
-          options={[]}
+          options={[
+            { label: "dwwdw", value: "dwwdw" },
+            { label: "scfswf", value: "scfswf" },
+          ]}
+          // options={[]}
         />
+        <div className="space-y-3">
+          <label>برچسب ها</label>
+          <TagsInput value={tags} onChange={setTags} name="tags" />
+        </div>
 
         <Button>ارسال</Button>
       </form>
