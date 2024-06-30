@@ -4,35 +4,30 @@ function TextField({
   lableText,
   isFoucus = false,
   ElementClass = "textFiled__input",
-  elemValue,
-  setElemVaulue,
+  register,
+  errorValidation,
+  required,
+  errors,
 }) {
+  if (!register) return;
   return (
     <div className="space-y-3 ">
-      <label htmlFor={id}>{lableText}</label>
+      <label className="flex gap-2" htmlFor={id}>
+        {lableText} {required && <p className="text-red-600">*</p>}
+      </label>
       <input
-        value={elemValue}
-        onChange={(e) => setElemVaulue(e.target.value)}
+        {...register(id, errorValidation)}
         id={id}
         autoFocus={isFoucus}
         type={elementType}
         className={ElementClass}
         autoComplete="off"
       />
+      {errors && errors[id] && (
+        <p className="text-sm px-4 text-red-500">{errors[id].message}</p>
+      )}
     </div>
   );
 }
 
 export default TextField;
-
-{
-  /* <label htmlFor="phoneNumber">شماره موبایل</label>
-<input
-  value={phoneNumber}
-  onChange={(e) => setPhoneNumber(e.target.value)}
-  id="phoneNumber"
-  autoFocus="true"
-  type="text"
-  className="textFiled__input"
-/> */
-}
