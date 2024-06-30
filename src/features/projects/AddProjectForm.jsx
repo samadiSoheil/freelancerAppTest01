@@ -4,8 +4,11 @@ import { useForm } from "react-hook-form";
 import RHFSelectInput from "../../ui/RHFSelectInput";
 import { TagsInput } from "react-tag-input-component";
 import { useState } from "react";
+import DatePickerField from "../../ui/DatePickerField";
 const AddProjectForm = () => {
   const [tags, setTags] = useState([]);
+  const [date, setDate] = useState(new Date());
+
   const {
     register,
     formState: { errors },
@@ -80,17 +83,14 @@ const AddProjectForm = () => {
           rejester={register}
           required
           errors={errors}
-          options={[
-            { label: "dwwdw", value: "dwwdw" },
-            { label: "scfswf", value: "scfswf" },
-          ]}
-          // options={[]}
+          options={[]}
         />
         <div className="space-y-3">
           <label>برچسب ها</label>
           <TagsInput value={tags} onChange={setTags} name="tags" />
         </div>
 
+        <DatePickerField date={date} setDate={setDate} label="تاریخ پایان پروژه" />
         <Button>ارسال</Button>
       </form>
     </>
