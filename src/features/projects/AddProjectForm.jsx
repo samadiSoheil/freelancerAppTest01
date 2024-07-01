@@ -8,16 +8,40 @@ import DatePickerField from "../../ui/DatePickerField";
 import useCategory from "../../hook/useCategory";
 import usePostProject from "./usePostProject";
 import Loading from "../../ui/Loading";
-const AddProjectForm = ({ setIsOpenModal }) => {
-  const [tags, setTags] = useState([]);
-  const [date, setDate] = useState(new Date());
-  const { category } = useCategory();
+import useEditProject from "./useEditProject";
+const AddProjectForm = ({ setIsOpenModal, projectData = {} }) => {
+  const {
+    _id: editId,
+    budget,
+    category,
+    description,
+    deadline,
+    title,
+    tags: editedTags,
+  } = projectData;
+  const isEditMode = Boolean(editId);
+  console.log({ isEditMode });
+
+  let editValues = {};
+  if (isEditMode) {
+    editValues = {
+      budget,
+      category: category._id,
+      description,
+      title,
+    };
+  }
+
+  const [tags, setTags] = useState(editedTags || []);
+  const [date, setDate] = useState(new Date(deadline || ""));
+  const { category: listOfCategory } = useCategory();
   const { createProjectFn, isCreatingProjrct } = usePostProject();
+  const { editeProjectFun, isEditing } = useEditProject();
   const {
     register,
     formState: { errors },
     handleSubmit,
-  } = useForm();
+  } = useForm({ defaultValues: editValues });
 
   const submitHandler = (data) => {
     const newObj = {
@@ -25,14 +49,23 @@ const AddProjectForm = ({ setIsOpenModal }) => {
       deadline: new Date(date).toISOString(),
       tags: tags,
     };
-    createProjectFn(newObj, {
-      onSuccess: () => setIsOpenModal(false),
-    });
+    if (isEditMode) {
+      editeProjectFun(
+        { id: editId, newProject: newObj },
+        {
+          onSuccess: () => setIsOpenModal(false),
+        }
+      );
+    } else {
+      createProjectFn(newObj, {
+        onSuccess: () => setIsOpenModal(false),
+      });
+    }
   };
 
   return (
     <>
-      <form onSubmit={handleSubmit(submitHandler)} className="space-y-8 mt-4">
+      <form onSubmit={handleSubmit(submitHandler)} className="space-y-8 mt-4 text-right">
         <TextField
           isFoucus={true}
           lableText="نام پروژ"
@@ -93,9 +126,9 @@ const AddProjectForm = ({ setIsOpenModal }) => {
           rejester={register}
           required
           errors={errors}
-          options={category}
+          options={listOfCategory}
         />
-        <div className="space-y-3">
+        <div className=" space-y-3">
           <label>برچسب ها</label>
           <TagsInput value={tags} onChange={setTags} name="tags" />
         </div>
