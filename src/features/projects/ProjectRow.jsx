@@ -4,6 +4,7 @@ import Modal from "../../ui/modal/Modal";
 import { useState } from "react";
 import ConfirmDelete from "../../ui/modal/ConfirmDelete";
 import { useDeleteProject } from "./useDeleteProject";
+import AddProjectForm from "./AddProjectForm";
 
 const ProjectRow = ({ item, index }) => {
   const [isOpenDeleteMidal, setIsOpenDeleteModal] = useState(false);
@@ -82,7 +83,7 @@ const ProjectRow = ({ item, index }) => {
               title={` ویرایش پروژه ی ${item.title}`}
               typeOfModal="Edit"
             >
-              <h1>this is a edit Modal</h1>
+              <AddProjectForm projectData={item} setIsOpenModal={setIsOpenEditeModal} />
             </Modal>
           </>
         </div>
