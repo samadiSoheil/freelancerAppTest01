@@ -11,3 +11,7 @@ export const deleteOwnerProject = (id) => {
 export const createProject = (data) => {
   return Http.post("/project/add", data).then(({ data }) => data.data);
 };
+
+export const editProject = ({ id, newProject }) => {
+  return Http.patch(`/project/update/${id}`, newProject).then(({ data }) => data.data);
+};
