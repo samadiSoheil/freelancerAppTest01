@@ -23,7 +23,7 @@ const ProjectsHeader = () => {
           title="اضافه کردن پروژه جدید"
           typeOfModal="AddProject"
         >
-          <AddProjectForm />
+          <AddProjectForm setIsOpenModal={setIsOpenModal} />
         </Modal>
       </div>
     </>
