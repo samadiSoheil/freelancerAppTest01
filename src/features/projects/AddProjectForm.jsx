@@ -6,10 +6,13 @@ import { TagsInput } from "react-tag-input-component";
 import { useState } from "react";
 import DatePickerField from "../../ui/DatePickerField";
 import useCategory from "../../hook/useCategory";
-const AddProjectForm = () => {
+import usePostProject from "./usePostProject";
+import Loading from "../../ui/Loading";
+const AddProjectForm = ({ setIsOpenModal }) => {
   const [tags, setTags] = useState([]);
   const [date, setDate] = useState(new Date());
   const { category } = useCategory();
+  const { createProjectFn, isCreatingProjrct } = usePostProject();
   const {
     register,
     formState: { errors },
@@ -17,8 +20,14 @@ const AddProjectForm = () => {
   } = useForm();
 
   const submitHandler = (data) => {
-    console.log(data);
-    console.log(tags);
+    const newObj = {
+      ...data,
+      deadline: new Date(date).toISOString(),
+      tags: tags,
+    };
+    createProjectFn(newObj, {
+      onSuccess: () => setIsOpenModal(false),
+    });
   };
 
   return (
@@ -27,7 +36,7 @@ const AddProjectForm = () => {
         <TextField
           isFoucus={true}
           lableText="نام پروژ"
-          id="projectName"
+          id="title"
           register={register}
           required
           errors={errors}
@@ -45,7 +54,7 @@ const AddProjectForm = () => {
         />
         <TextField
           lableText="توضیحات"
-          id="projectDescription"
+          id="description"
           register={register}
           required
           errors={errors}
@@ -58,7 +67,7 @@ const AddProjectForm = () => {
         />
         <TextField
           lableText="میزان بودجه"
-          id="buget"
+          id="budget"
           elementType="number"
           register={register}
           required
@@ -92,7 +101,7 @@ const AddProjectForm = () => {
         </div>
 
         <DatePickerField date={date} setDate={setDate} label="تاریخ پایان پروژه" />
-        <Button>ارسال</Button>
+        {isCreatingProjrct ? <Loading /> : <Button>ارسال</Button>}
       </form>
     </>
   );
