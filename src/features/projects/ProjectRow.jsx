@@ -17,7 +17,7 @@ const ProjectRow = ({ item, index }) => {
         <div className="projects__table-title">{item.title}</div>
       </td>
       <td>
-        <div className="projects__table-title">{item.category || "--"}</div>
+        <div className="min-w-[100px]">{item.category?.title || "--"}</div>
       </td>
       <td>{item.budget.toLocaleString("fa")}</td>
       <td>{new Date(item.deadline).toLocaleDateString("fa-ir")}</td>
