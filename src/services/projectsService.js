@@ -7,3 +7,7 @@ export const getAllOwnerProjects = () => {
 export const deleteOwnerProject = (id) => {
   return Http.delete(`/project/${id}`).then(({ data }) => data.data);
 };
+
+export const createProject = (data) => {
+  return Http.post("/project/add", data).then(({ data }) => data.data);
+};
