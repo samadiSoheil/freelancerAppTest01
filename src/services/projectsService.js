@@ -15,3 +15,7 @@ export const createProject = (data) => {
 export const editProject = ({ id, newProject }) => {
   return Http.patch(`/project/update/${id}`, newProject).then(({ data }) => data.data);
 };
+
+export const toggleProjectStatus = ({ id, toggeledProject }) => {
+  return Http.patch(`/project/${id}`, toggeledProject).then(({ data }) => data.data);
+};
