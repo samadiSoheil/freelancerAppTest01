@@ -5,6 +5,7 @@ import { useState } from "react";
 import ConfirmDelete from "../../ui/modal/ConfirmDelete";
 import { useDeleteProject } from "./useDeleteProject";
 import AddProjectForm from "./AddProjectForm";
+import StatusProject from "./StatusProject";
 
 const ProjectRow = ({ item, index }) => {
   const [isOpenDeleteMidal, setIsOpenDeleteModal] = useState(false);
@@ -34,13 +35,7 @@ const ProjectRow = ({ item, index }) => {
         </div>
       </td>
       <td>{item.freelancer ? item.freelancer : "---"}</td>
-      <td>
-        {item.status == "OPEN" ? (
-          <span className="badge badge--green">باز</span>
-        ) : (
-          <span className="badge badge--red">بسته</span>
-        )}
-      </td>
+      <td className="flex justify-center">{<StatusProject project={item} />}</td>
       <td>
         <div className="flex justify-center gap-4">
           {/* delete modal */}
