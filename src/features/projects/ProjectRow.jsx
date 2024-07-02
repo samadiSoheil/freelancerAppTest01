@@ -1,4 +1,5 @@
 import { FaRegTrashAlt } from "react-icons/fa";
+import { FaEye } from "react-icons/fa6";
 import { MdEdit } from "react-icons/md";
 import Modal from "../../ui/modal/Modal";
 import { useState } from "react";
@@ -6,6 +7,7 @@ import ConfirmDelete from "../../ui/modal/ConfirmDelete";
 import { useDeleteProject } from "./useDeleteProject";
 import AddProjectForm from "./AddProjectForm";
 import StatusProject from "./StatusProject";
+import { Link } from "react-router-dom";
 
 const ProjectRow = ({ item, index }) => {
   const [isOpenDeleteMidal, setIsOpenDeleteModal] = useState(false);
@@ -82,6 +84,12 @@ const ProjectRow = ({ item, index }) => {
             </Modal>
           </>
         </div>
+      </td>
+      <td>
+        <Link to={item._id} className="flex justify-center items-center gap-2">
+          <FaEye className="size-5 text-primary-800" />
+          <span>مشاهده</span>
+        </Link>
       </td>
     </>
   );
