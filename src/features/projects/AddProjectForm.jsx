@@ -129,7 +129,7 @@ const AddProjectForm = ({ setIsOpenModal, projectData = {} }) => {
           options={listOfCategory}
         />
         <div className=" space-y-3">
-          <label>برچسب ها</label>
+          <label className="text-secondary-800 dark:text-secondary-400">برچسب ها</label>
           <TagsInput value={tags} onChange={setTags} name="tags" />
         </div>
 

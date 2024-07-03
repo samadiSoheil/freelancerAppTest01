@@ -46,7 +46,7 @@ const ProjectRow = ({ item, index }) => {
               onClick={() => setIsOpenDeleteModal(true)}
               className="badge hover:bg-secondary-300"
             >
-              <FaRegTrashAlt className="size-4 text-red-500" />
+              <FaRegTrashAlt className="size-4 text-red-500 dark:text-red-400" />
             </button>
             <Modal
               isOpen={isOpenDeleteMidal}
@@ -72,7 +72,7 @@ const ProjectRow = ({ item, index }) => {
               onClick={() => setIsOpenEditeModal(true)}
               className="badge hover:bg-secondary-300"
             >
-              <MdEdit className="size-4 text-primary-900" />
+              <MdEdit className="size-4 text-primary-900 dark:text-primary-500" />
             </button>
             <Modal
               isOpen={isOpenEditMidal}
@@ -87,7 +87,7 @@ const ProjectRow = ({ item, index }) => {
       </td>
       <td>
         <Link to={item._id} className="flex justify-center items-center gap-2">
-          <FaEye className="size-5 text-primary-800" />
+          <FaEye className="size-5 text-primary-800 dark:text-primary-700" />
           <span>مشاهده</span>
         </Link>
       </td>

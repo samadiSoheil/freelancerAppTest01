@@ -12,7 +12,10 @@ function TextField({
   if (!register) return;
   return (
     <div className="space-y-3 ">
-      <label className="flex gap-2" htmlFor={id}>
+      <label
+        className="flex gap-2 text-secondary-800 dark:text-secondary-400"
+        htmlFor={id}
+      >
         {lableText} {required && <p className="text-red-600">*</p>}
       </label>
       <input

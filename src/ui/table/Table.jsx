@@ -11,7 +11,7 @@ export default Table;
 const Thead = ({ children }) => {
   return (
     <>
-      <thead className=" bg-slate-100">
+      <thead className=" bg-slate-100 dark:bg-secondary-700">
         <tr>{children}</tr>
       </thead>
     </>

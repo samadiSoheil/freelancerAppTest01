@@ -1,7 +1,7 @@
 const ConfirmDelete = ({ title, onClose, deleteFunk }) => {
   return (
     <div className="pt-4">
-      <div className="flex flex-col items-start gap-3 text-secondary-800 text-right">
+      <div className="flex flex-col items-start gap-3 text-secondary-800 dark:text-secondary-400 text-right">
         <h1 className="font-Vazir-Bold ">{title}</h1>
         <p>درصورت حذف پروژه قابل بازیابی مجدد نمی باشد.</p>
       </div>

@@ -2,7 +2,10 @@ const RHFSelectInput = ({ id, label, options, required, rejester, errors }) => {
   return (
     <>
       <div className="space-y-3 ">
-        <label htmlFor={id} className="flex gap-2">
+        <label
+          htmlFor={id}
+          className="flex gap-2 text-secondary-800 dark:text-secondary-400"
+        >
           {label}
           {required && <p className="text-red-500">*</p>}
         </label>
