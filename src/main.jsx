@@ -12,6 +12,7 @@ import Owner from "./pages/Owner.jsx";
 import Projects from "./pages/Projects.jsx";
 import Project from "./pages/Project.jsx";
 import ThemeProvider from "./context/ThemeProvider.jsx";
+import OwnerLayout from "./features/owner/OwnerLayout.jsx";
 
 const queryClient = new QueryClient();
 const router = createBrowserRouter([
@@ -29,7 +30,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/owner",
-    element: <AppLayout />,
+    element: <OwnerLayout />,
     children: [
       {
         index: true,
