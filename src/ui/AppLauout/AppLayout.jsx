@@ -11,8 +11,8 @@ const AppLayout = () => {
         {/* HEADER MENU */}
         <Header />
         {/* MAIN CONTENT */}
-        <div className=" grid justify-stretch items-stretch p-5 bg-slate-6000 border-r-2 border-secondary-300 dark:border-secondary-700">
-          <div className="w-full overflow-x-auto bg-red-3000">{<Outlet />}</div>
+        <div className=" grid justify-stretch items-stretch p-5 border-r-2 border-secondary-300 dark:border-secondary-700">
+          <div className="w-full overflow-x-auto">{<Outlet />}</div>
         </div>
       </div>
     </>

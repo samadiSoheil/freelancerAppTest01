@@ -20,7 +20,6 @@ const AddProjectForm = ({ setIsOpenModal, projectData = {} }) => {
     tags: editedTags,
   } = projectData;
   const isEditMode = Boolean(editId);
-  console.log({ isEditMode });
 
   let editValues = {};
   if (isEditMode) {
