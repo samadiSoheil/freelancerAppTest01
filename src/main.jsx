@@ -11,6 +11,7 @@ import AppLayout from "./ui/AppLauout/AppLayout.jsx";
 import Owner from "./pages/Owner.jsx";
 import Projects from "./pages/Projects.jsx";
 import Project from "./pages/Project.jsx";
+import ThemeProvider from "./context/ThemeProvider.jsx";
 
 const queryClient = new QueryClient();
 const router = createBrowserRouter([
@@ -52,9 +53,11 @@ const router = createBrowserRouter([
 ]);
 ReactDOM.createRoot(document.getElementById("root")).render(
   <>
-    <QueryClientProvider client={queryClient}>
-      <RouterProvider router={router} />
-      <Toaster />
-    </QueryClientProvider>
+    <ThemeProvider>
+      <QueryClientProvider client={queryClient}>
+        <RouterProvider router={router} />
+        <Toaster />
+      </QueryClientProvider>
+    </ThemeProvider>
   </>
 );
