@@ -1,15 +1,21 @@
+import UserAvatar from "../../features/auth/UserAvatar";
 import { useUser } from "../../features/auth/useUser";
+import HeaderMenu from "./HeaderMenu/HeaderMenu";
 
 const Header = () => {
-  const { data } = useUser();
+  const { data, isPending } = useUser();
   console.log(data);
   if (!data) return null;
   return (
     <>
-      <div className="grid justify-stretch items-stretch p-2 bg-slate-500">
-        <div className=" row-span-2  bg-red-300">
-          <span>{data.user.name}</span> &nbsp;&nbsp;
-          <span>{data.user.email}</span>
+      <div className="grid justify-stretch items-stretch p-2 bg-slate-5000 overflow-hidden border-r-2  border-b-2 border-secondary-300 text-secondary-800 backdrop-blur-sm">
+        <div
+          className={`container flex justify-end items-center gap-8 bg-slate-4000 ${
+            isPending ? "blur-sm" : ""
+          } `}
+        >
+          <UserAvatar />
+          <HeaderMenu />
         </div>
       </div>
     </>
