@@ -1,13 +1,12 @@
 import { Outlet } from "react-router-dom";
 import Header from "./Header";
-import SideBar from "./SideBar";
 
-const AppLayout = () => {
+const AppLayout = ({ children }) => {
   return (
     <>
       <div className="grid grid-cols-[150px_minmax(100px,_1fr)] lg:grid-cols-[300px_minmax(500px,_1fr)] grid-rows-[50px_minmax(400px,_1fr)] lg:grid-rows-[80px_minmax(400px,_1fr)] w-full min-h-screen bg-secondary-100 dark:bg-secondary-800">
         {/* SIDEBAR MENUE */}
-        <SideBar />
+        {children}
         {/* HEADER MENU */}
         <Header />
         {/* MAIN CONTENT */}
