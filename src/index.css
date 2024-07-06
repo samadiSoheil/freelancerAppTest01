@@ -46,6 +46,15 @@
   .nav__item {
     @apply flex justify-center items-center px-2 py-2;
   }
+  .stat__container {
+    @apply p-5 flex-grow  bg-secondary-0 dark:bg-secondary-700 rounded-2xl text-secondary-800 dark:text-secondary-300;
+  }
+  .stat__icon-container {
+    @apply size-36 flex justify-center items-center rounded-full;
+  }
+  .stat__title {
+    @apply font-Vazir-Bold text-2xl text-secondary-800 dark:text-secondary-100;
+  }
 }
 
 /*----------- --------------   CSS CLASS         ---------------------------- */
