@@ -13,6 +13,9 @@ import Projects from "./pages/Projects.jsx";
 import Project from "./pages/Project.jsx";
 import ThemeProvider from "./context/ThemeProvider.jsx";
 import OwnerLayout from "./features/owner/OwnerLayout.jsx";
+import Freelancer from "./pages/Freelancer.jsx";
+import FreelancerLayout from "./features/Freelancer/FreelancerLayout.jsx";
+import FreelancerProposals from "./features/Freelancer/FreelancerProposals.jsx";
 
 const queryClient = new QueryClient();
 const router = createBrowserRouter([
@@ -48,6 +51,24 @@ const router = createBrowserRouter([
       {
         path: "projects/:id",
         element: <Project />,
+      },
+    ],
+  },
+  {
+    path: "/freelancer",
+    element: <FreelancerLayout />,
+    children: [
+      {
+        index: true,
+        element: <Navigate to="dashboard" replace={true} />,
+      },
+      {
+        path: "dashboard",
+        element: <Freelancer />,
+      },
+      {
+        path: "proposals",
+        element: <FreelancerProposals />,
       },
     ],
   },
