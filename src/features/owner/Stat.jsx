@@ -10,7 +10,7 @@ const Stat = ({ title, icon, valueOfStat, cardClass }) => {
       <div className="flex flex-col items-center gap-4">
         <div className={`stat__icon-container ${colors[cardClass]}`}>{icon}</div>
         <div>
-          <h2 className="stat__title">
+          <h2 className="stat__title flex flex-col items-center gap-2">
             {title}&nbsp;<span>{valueOfStat.toLocaleString("fa-ir")}</span>
           </h2>
         </div>
