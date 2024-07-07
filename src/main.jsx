@@ -15,7 +15,8 @@ import ThemeProvider from "./context/ThemeProvider.jsx";
 import OwnerLayout from "./features/owner/OwnerLayout.jsx";
 import Freelancer from "./pages/Freelancer.jsx";
 import FreelancerLayout from "./features/Freelancer/FreelancerLayout.jsx";
-import FreelancerProposals from "./features/Freelancer/FreelancerProposals.jsx";
+import FreelancerProposals from "./pages/FreelancerProposals.jsx";
+import SubmitedProjects from "./pages/SubmitedProjects.jsx";
 
 const queryClient = new QueryClient();
 const router = createBrowserRouter([
@@ -69,6 +70,10 @@ const router = createBrowserRouter([
       {
         path: "proposals",
         element: <FreelancerProposals />,
+      },
+      {
+        path: "projects",
+        element: <SubmitedProjects />,
       },
     ],
   },
