@@ -36,7 +36,7 @@ const ProjectRow = ({ item, index }) => {
           })}
         </div>
       </td>
-      <td>{item.freelancer ? item.freelancer : "---"}</td>
+      <td>{item.freelancer ? item.freelancer.name : "---"}</td>
       <td className="flex justify-center">{<StatusProject project={item} />}</td>
       <td>
         <div className="flex justify-center gap-4">
