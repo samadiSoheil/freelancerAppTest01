@@ -22,8 +22,7 @@ const projectStatus = [
 ];
 
 const ChangeProposalStatus = ({ projectTitle, proposalId, onClose }) => {
-  const params = useParams();
-  console.log(params);
+  const { id: projectId } = useParams();
   const {
     register,
     formState: { errors },
@@ -33,14 +32,13 @@ const ChangeProposalStatus = ({ projectTitle, proposalId, onClose }) => {
   const { changingProposalStatusFun, isChangeStatus } = useProposalStatus();
   const queryClient = useQueryClient();
   const submitHandler = (data) => {
-    console.log(data, proposalId);
     changingProposalStatusFun(
-      { id: proposalId, data: data },
+      { proposalId, projectId, ...data },
       {
         onSuccess: () => {
           onClose(false);
           queryClient.invalidateQueries({
-            queryKey: ["project", params.id],
+            queryKey: ["project", projectId],
           });
         },
       }
