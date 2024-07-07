@@ -7,3 +7,7 @@ export const changeProposalStatusApi = ({ proposalId, ...rest }) => {
 export const getAllProposals = () => {
   return Http.get("/proposal/list").then(({ data }) => data.data);
 };
+
+export const createProposal = (data) => {
+  return Http.post("/proposal/add", data).then(({ data }) => data.data);
+};
