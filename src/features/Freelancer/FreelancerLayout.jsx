@@ -1,7 +1,8 @@
-import { MdDashboard, MdHome } from "react-icons/md";
+import { MdHome } from "react-icons/md";
 import AppLayout from "../../ui/AppLauout/AppLayout";
 import CustomNavLink from "../../ui/AppLauout/CustomNavLink";
 import SideBar from "../../ui/AppLauout/SideBar";
+import { HiMiniArrowsPointingOut, HiSquare3Stack3D } from "react-icons/hi2";
 
 const FreelancerLayout = () => {
   return (
@@ -11,12 +12,17 @@ const FreelancerLayout = () => {
           <CustomNavLink
             link="dashboard"
             iconComponent={<MdHome className="size-5" />}
-            title="خانه فریلنسر"
+            title="خانه"
           />
           <CustomNavLink
             link="proposals"
-            iconComponent={<MdDashboard className="size-5" />}
-            title="درخواست های فریلنسر"
+            iconComponent={<HiMiniArrowsPointingOut className="size-5" />}
+            title="درخواست ها"
+          />
+          <CustomNavLink
+            link="projects"
+            iconComponent={<HiSquare3Stack3D className="size-5" />}
+            title="پروژه ها"
           />
         </SideBar>
       </AppLayout>
