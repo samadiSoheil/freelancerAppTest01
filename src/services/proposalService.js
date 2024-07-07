@@ -1,7 +1,7 @@
 import Http from "../services/httpService";
 
-export const setProposalStatus = ({ id, data }) => {
-  return Http.patch(`/proposal/${id}`, data).then(({ data }) => data.data);
+export const changeProposalStatusApi = ({ proposalId, ...rest }) => {
+  return Http.patch(`/proposal/${proposalId}`, rest).then(({ data }) => data.data);
 };
 
 export const getAllProposals = () => {
