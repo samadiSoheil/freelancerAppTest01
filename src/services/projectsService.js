@@ -24,6 +24,6 @@ export const getProject = (id) => {
   return Http.get(`/project/${id}`).then(({ data }) => data.data);
 };
 
-export const getAllProjects = () => {
-  return Http.get("/project/list").then(({ data }) => data.data);
+export const getAllProjects = (searchQuery) => {
+  return Http.get(`/project/list${searchQuery}`).then(({ data }) => data.data);
 };
