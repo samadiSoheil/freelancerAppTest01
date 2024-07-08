@@ -6,7 +6,7 @@ const BackPageBtn = () => {
 
   return (
     <button
-      className="border border-gray-500 size-10 flex justify-center items-center rounded-xl"
+      className="border border-gray-500 size-12 flex justify-center items-center rounded-xl"
       onClick={() => navigateUser(-1)}
     >
       <FaLongArrowAltRight className="size-6 text-gray-500 rotate-180" />
