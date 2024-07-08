@@ -17,6 +17,9 @@ import Freelancer from "./pages/Freelancer.jsx";
 import FreelancerLayout from "./features/Freelancer/FreelancerLayout.jsx";
 import FreelancerProposals from "./pages/FreelancerProposals.jsx";
 import SubmitedProjects from "./pages/SubmitedProjects.jsx";
+import ProtectedRoute from "./ui/protectedRoute/ProtectedRoute.jsx";
+import NotFound from "./ui/Errors/NotFound.jsx";
+import NotAccess from "./ui/Errors/NotAccess.jsx";
 
 const queryClient = new QueryClient();
 const router = createBrowserRouter([
@@ -34,7 +37,11 @@ const router = createBrowserRouter([
   },
   {
     path: "/owner",
-    element: <OwnerLayout />,
+    element: (
+      <ProtectedRoute>
+        <OwnerLayout />
+      </ProtectedRoute>
+    ),
     children: [
       {
         index: true,
@@ -57,7 +64,12 @@ const router = createBrowserRouter([
   },
   {
     path: "/freelancer",
-    element: <FreelancerLayout />,
+    element: (
+      <ProtectedRoute>
+        <FreelancerLayout />
+      </ProtectedRoute>
+    ),
+
     children: [
       {
         index: true,
@@ -76,6 +88,14 @@ const router = createBrowserRouter([
         element: <SubmitedProjects />,
       },
     ],
+  },
+  {
+    path: "not-access",
+    element: <NotAccess />,
+  },
+  {
+    path: "*",
+    element: <NotFound />,
   },
 ]);
 ReactDOM.createRoot(document.getElementById("root")).render(
