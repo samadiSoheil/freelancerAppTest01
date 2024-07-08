@@ -11,7 +11,7 @@ const Filter = ({ label, optioins, filterField }) => {
   return (
     <div className="flex items-center gap-4 bg-whites text-secondary-800 dark:text-secondary-400">
       <span>{label}</span>
-      <div className="flex gap-2 bg-white dark:bg-secondary-600/40 dark:bg-secondary-800 rounded-xl">
+      <div className="flex gap-2 bg-white dark:bg-secondary-600/40 rounded-xl">
         {optioins.map((item) => {
           const isActive = currentFilter === item.value;
           return (
