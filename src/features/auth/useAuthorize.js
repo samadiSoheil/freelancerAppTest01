@@ -14,5 +14,8 @@ export const useAuthorize = () => {
   let isAuthorise = false;
   if (userRole === pathRole) isAuthorise = true;
 
-  return { isAuthenticated, isAuthorise, isPending };
+  let isVerirified = false;
+  if (data?.user && +data?.user.status === 2) isVerirified = true;
+
+  return { isAuthenticated, isAuthorise, isPending, isVerirified };
 };
