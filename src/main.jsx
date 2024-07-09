@@ -7,7 +7,6 @@ import Auth from "./pages/Auth.jsx";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "react-hot-toast";
 import CompleteProfile from "./pages/CompleteProfile.jsx";
-import AppLayout from "./ui/AppLauout/AppLayout.jsx";
 import Owner from "./pages/Owner.jsx";
 import Projects from "./pages/Projects.jsx";
 import Project from "./pages/Project.jsx";
@@ -20,6 +19,8 @@ import SubmitedProjects from "./pages/SubmitedProjects.jsx";
 import ProtectedRoute from "./ui/protectedRoute/ProtectedRoute.jsx";
 import NotFound from "./ui/Errors/NotFound.jsx";
 import NotAccess from "./ui/Errors/NotAccess.jsx";
+import Admin from "./pages/Admin.jsx";
+import AdminLayout from "./features/admin/AdminLayout.jsx";
 
 const queryClient = new QueryClient();
 const router = createBrowserRouter([
@@ -86,6 +87,24 @@ const router = createBrowserRouter([
       {
         path: "projects",
         element: <SubmitedProjects />,
+      },
+    ],
+  },
+  {
+    path: "/admin",
+    element: (
+      <ProtectedRoute>
+        <AdminLayout />
+      </ProtectedRoute>
+    ),
+    children: [
+      {
+        index: true,
+        element: <Navigate to="dashboard" replace={true} />,
+      },
+      {
+        path: "dashboard",
+        element: <Admin />,
       },
     ],
   },
