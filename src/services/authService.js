@@ -19,3 +19,7 @@ export const getUser = () => {
 export const logoutUser = () => {
   return Http.post("/user/logout").then(({ data }) => data.data);
 };
+
+export const getAllUsersApi = () => {
+  return Http.get("/admin/user/list").then(({ data }) => data.data);
+};
