@@ -23,3 +23,7 @@ export const logoutUser = () => {
 export const getAllUsersApi = () => {
   return Http.get("/admin/user/list").then(({ data }) => data.data);
 };
+
+export const verifyUser = ({ id, data }) => {
+  return Http.patch(`/admin/user/verify/${id}`, data).then(({ data }) => data.data);
+};
