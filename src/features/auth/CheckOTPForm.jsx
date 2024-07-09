@@ -35,6 +35,7 @@ const CheckOTPForm = ({
         if (user.status == 2) {
           if (user.role === "OWNER") return navigateUser("/owner");
           if (user.role === "FREELANCER") return navigateUser("/freelancer");
+          if (user.role === "ADMIN") return navigateUser("/admin");
         } else {
           navigateUser("/");
           toast((t) => {
