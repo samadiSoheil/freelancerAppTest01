@@ -37,7 +37,11 @@ const ProjectRow = ({ item, index }) => {
         </div>
       </td>
       <td>{item.freelancer ? item.freelancer.name : "---"}</td>
-      <td className="flex justify-center">{<StatusProject project={item} />}</td>
+      <td>
+        <div className="flex justify-center items-center">
+          {<StatusProject project={item} />}
+        </div>
+      </td>
       <td>
         <div className="flex justify-center gap-4">
           {/* delete modal */}

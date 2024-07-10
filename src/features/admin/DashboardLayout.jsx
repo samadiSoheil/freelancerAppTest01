@@ -15,7 +15,7 @@ const DashboardLayout = () => {
   if (!projects || !proposals || !users) return;
 
   return (
-    <div className="container">
+    <>
       <HeaderOfComponent title="داشبورد شما">
         <BackPageBtn />
       </HeaderOfComponent>
@@ -24,7 +24,7 @@ const DashboardLayout = () => {
         proposals={proposals.length}
         projects={projects.length}
       />
-    </div>
+    </>
   );
 };
 

@@ -10,12 +10,12 @@ const DashboardLayout = () => {
   if (isPending) return <Loading />;
   console.log(proposals);
   return (
-    <div className="container">
+    <>
       <HeaderOfComponent title="داشبورد شما">
         <BackPageBtn />
       </HeaderOfComponent>
       <Stats proposals={proposals} />
-    </div>
+    </>
   );
 };
 

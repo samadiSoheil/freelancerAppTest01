@@ -10,12 +10,12 @@ const DashboardLayout = () => {
   if (!projects.length) return <p>شما پروژه ای ندارید...</p>;
 
   return (
-    <div className="container">
+    <>
       <HeaderOfComponent title="داشبورد شما">
         <BackPageBtn />
       </HeaderOfComponent>
       <Stats projects={projects} />
-    </div>
+    </>
   );
 };
 

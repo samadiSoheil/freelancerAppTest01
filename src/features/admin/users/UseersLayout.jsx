@@ -5,12 +5,10 @@ import UsersTable from "./UsersTable";
 const UseersLayout = () => {
   return (
     <>
-      <div className="container">
-        <HeaderOfComponent title="لیست کاربران">
-          <BackPageBtn />
-        </HeaderOfComponent>
-        <UsersTable />
-      </div>
+      <HeaderOfComponent title="لیست کاربران">
+        <BackPageBtn />
+      </HeaderOfComponent>
+      <UsersTable />
     </>
   );
 };

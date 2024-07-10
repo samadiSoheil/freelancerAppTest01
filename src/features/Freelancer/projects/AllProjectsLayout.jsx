@@ -9,34 +9,38 @@ const AllProjectsLayout = () => {
   const { isLoading, transformedCategory } = useCategory();
   return (
     <>
-      <HeaderOfComponent title="پروژه ها">
-        <div className="flex justify-end items-center gap-8">
-          <Filter
-            label="وضعیت"
-            filterField="status"
-            optioins={[
-              { value: "ALL", label: "همه" },
-              { value: "OPEN", label: "باز" },
-              { value: "CLOSED", label: "بسته" },
-            ]}
-          />
-          <FilterDropDown
-            filterField="category"
-            optioins={[{ value: "ALL", label: "همه" }, ...transformedCategory]}
-            isLoading={isLoading}
-          />
-          <FilterDropDown
-            filterField="sort"
-            optioins={[
-              { value: "ALL", label: "پیش فرض" },
-              { value: "latest", label: "جدیدترین" },
-              { value: "earliest", label: "قدیمی ترین" },
-            ]}
-            isLoading={isLoading}
-          />
-          <BackPageBtn />
+      <div className=" overflow-auto">
+        <div className="min-w-[859px]">
+          <HeaderOfComponent title="پروژه ها">
+            <div className="flex justify-end items-center gap-8">
+              <Filter
+                label="وضعیت"
+                filterField="status"
+                optioins={[
+                  { value: "ALL", label: "همه" },
+                  { value: "OPEN", label: "باز" },
+                  { value: "CLOSED", label: "بسته" },
+                ]}
+              />
+              <FilterDropDown
+                filterField="category"
+                optioins={[{ value: "ALL", label: "همه" }, ...transformedCategory]}
+                isLoading={isLoading}
+              />
+              <FilterDropDown
+                filterField="sort"
+                optioins={[
+                  { value: "ALL", label: "پیش فرض" },
+                  { value: "latest", label: "جدیدترین" },
+                  { value: "earliest", label: "قدیمی ترین" },
+                ]}
+                isLoading={isLoading}
+              />
+              <BackPageBtn />
+            </div>
+          </HeaderOfComponent>
         </div>
-      </HeaderOfComponent>
+      </div>
       <ProjectsTable />
     </>
   );

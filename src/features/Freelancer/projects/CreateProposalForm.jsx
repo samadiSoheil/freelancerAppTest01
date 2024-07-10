@@ -46,7 +46,6 @@ const CreateProposalForm = ({ projectId, onClose }) => {
       />
       <TextField
         id="duration"
-        isFoucus={true}
         lableText="مدت زمان"
         register={register}
         errorValidation={{
