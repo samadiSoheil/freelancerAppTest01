@@ -10,7 +10,7 @@ const NotAccess = () => {
   const previuseRoute = data?.user?.role?.toLowerCase();
 
   return (
-    <div className="w-full h-screen flex flex-col items-center justify-center gap-4">
+    <div className="w-full h-screen bg-slate-100 dark:bg-secondary-700 text-secondary-800 dark:text-secondary-400 flex flex-col items-center justify-center gap-4">
       <svg
         class="max-w-[696px]"
         viewBox="0 0 696 449"

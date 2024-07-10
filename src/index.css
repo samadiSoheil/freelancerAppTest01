@@ -32,10 +32,10 @@
     @apply min-w-[1000px] w-full text-center  bg-secondary-0 dark:bg-secondary-600;
   }
   .projects__table-title {
-    @apply max-w-[300px] max-h-[35px] line-clamp-1 overflow-hidden;
+    @apply max-w-[100px] max-h-[35px] line-clamp-1 overflow-hidden;
   }
   .badge {
-    @apply h-[26px] flex items-center justify-center px-4 py-0.5 text-sm bg-secondary-200/70 dark:bg-secondary-500 rounded-full transition-all duration-300;
+    @apply h-[26px] flex items-center justify-center whitespace-nowrap px-4 py-0.5 text-sm bg-secondary-200/70 dark:bg-secondary-500 rounded-full transition-all duration-300;
   }
   .badge--red {
     @apply bg-red-200 dark:bg-red-800 text-red-700 dark:text-red-300;
@@ -66,8 +66,8 @@
 }
 
 body {
-  background-color: theme("colors.slate.100");
   font-family: theme("fontFamily.Vazir");
+  @apply transition-all duration-300 ease-in bg-slate-100 dark:bg-secondary-800 !important;
 }
 
 tbody tr {
@@ -82,7 +82,6 @@ td {
 td {
   @apply text-secondary-800 dark:text-secondary-300;
 }
-
 tr td,
 th {
   @apply p-3;

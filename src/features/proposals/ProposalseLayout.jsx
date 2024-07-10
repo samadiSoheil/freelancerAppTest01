@@ -5,12 +5,10 @@ import ProposalsTable from "./ProposalsTable";
 const ProposalseLayout = () => {
   return (
     <>
-      <div className="container">
-        <HeaderOfComponent title="درخواست های شما">
-          <BackPageBtn />
-        </HeaderOfComponent>
-        <ProposalsTable />
-      </div>
+      <HeaderOfComponent title="درخواست های شما">
+        <BackPageBtn />
+      </HeaderOfComponent>
+      <ProposalsTable />
     </>
   );
 };
