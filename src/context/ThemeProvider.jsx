@@ -3,6 +3,7 @@ import { createContext, useContext, useEffect, useState } from "react";
 const ThemeContext = createContext();
 
 const ThemeProvider = ({ children }) => {
+  const [isOpenSidebar, setISopenSidebar] = useState(false);
   const [isDark, setIsDark] = useState(
     JSON.parse(
       localStorage.getItem("isDark") ||
@@ -25,7 +26,9 @@ const ThemeProvider = ({ children }) => {
 
   console.log(JSON.parse(localStorage.getItem("isDark")));
   return (
-    <ThemeContext.Provider value={{ isDark, changeThemeFun }}>
+    <ThemeContext.Provider
+      value={{ isDark, changeThemeFun, isOpenSidebar, setISopenSidebar }}
+    >
       {children}
     </ThemeContext.Provider>
   );
