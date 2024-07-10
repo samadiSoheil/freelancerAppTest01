@@ -12,6 +12,9 @@ const useToggleprojectStatus = () => {
       queryClient.invalidateQueries({
         queryKey: ["owner-projects"],
       });
+      queryClient.invalidateQueries({
+        queryKey: ["getAllQueys"],
+      });
     },
     onError: (error) => {
       toast.error(error?.response?.data?.message);
