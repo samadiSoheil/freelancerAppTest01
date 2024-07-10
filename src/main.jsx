@@ -21,6 +21,8 @@ import NotFound from "./ui/Errors/NotFound.jsx";
 import NotAccess from "./ui/Errors/NotAccess.jsx";
 import Admin from "./pages/Admin.jsx";
 import AdminLayout from "./features/admin/AdminLayout.jsx";
+import AdminUsers from "./pages/AdminUsers.jsx";
+import AllProjectsForAdmin from "./pages/AllProjectsForAdmin.jsx";
 
 const queryClient = new QueryClient();
 const router = createBrowserRouter([
@@ -105,6 +107,22 @@ const router = createBrowserRouter([
       {
         path: "dashboard",
         element: <Admin />,
+      },
+      {
+        path: "users",
+        element: <AdminUsers />,
+      },
+      {
+        path: "proposals",
+        element: <FreelancerProposals />,
+      },
+      {
+        path: "projects",
+        element: <AllProjectsForAdmin />,
+      },
+      {
+        path: "projects/:id",
+        element: <Project />,
       },
     ],
   },
