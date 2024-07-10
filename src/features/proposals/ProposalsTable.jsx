@@ -9,7 +9,6 @@ const ProposalsTable = () => {
   if (isPending) return <Loading />;
   if (!proposals.length) return <p>درخواستی وجود ندارد...</p>;
 
-  console.log(proposals);
   return (
     <>
       <Table>

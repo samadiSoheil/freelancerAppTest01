@@ -24,7 +24,6 @@ const ThemeProvider = ({ children }) => {
     }
   }, [isDark]);
 
-  console.log(JSON.parse(localStorage.getItem("isDark")));
   return (
     <ThemeContext.Provider
       value={{ isDark, changeThemeFun, isOpenSidebar, setISopenSidebar }}

@@ -4,7 +4,6 @@ const UserAvatar = () => {
   const {
     data: { user },
   } = useUser();
-  console.log(user);
 
   return (
     <div className="hidden lg:flex justify-center items-center gap-2">

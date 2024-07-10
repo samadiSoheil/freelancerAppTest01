@@ -14,7 +14,6 @@ const CreateProposalForm = ({ projectId, onClose }) => {
   const { isSendingProposal, sendProposalFn } = useCreateProposal();
 
   const submitHandler = async (data) => {
-    console.log(data);
     sendProposalFn(
       { ...data, projectId },
       {

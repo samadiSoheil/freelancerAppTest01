@@ -28,7 +28,6 @@ const CompleteProfileForm = () => {
         role: rule,
       });
       toast.success(message);
-      console.log(user);
       if (user.status == 2) {
         if (user.role === "OWNER") return navigateUser("/owner");
         if (user.role === "FREELANCER") return navigateUser("/freelancer");

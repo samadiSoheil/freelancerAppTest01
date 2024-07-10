@@ -29,7 +29,6 @@ const ChangeUserStatus = ({ projectTitle, onClose, userId }) => {
   const { changeUserStatusFu, isChangeUserStatus } = useChangeUserStatus();
 
   const submitHandler = (data) => {
-    console.log(data, userId);
     changeUserStatusFu(
       { id: userId, data },
       {

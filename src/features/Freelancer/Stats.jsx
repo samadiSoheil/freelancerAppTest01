@@ -8,7 +8,6 @@ const Stats = ({ proposals }) => {
   const numOfProposals = proposals
     .filter((p) => p.status == 2)
     .reduce((acc, item) => acc + item.price, 0);
-  console.log(numOfProjects, numOfOpenProjects, numOfProposals);
   return (
     <>
       <div className="w-full flex flex-col gap-y-8 sm:flex-row sm:justify-between sm:flex-wrap sm:gap-8">

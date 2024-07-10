@@ -8,7 +8,6 @@ const DashboardLayout = () => {
   const { proposals, isPending } = useProposals();
   if (!proposals) return;
   if (isPending) return <Loading />;
-  console.log(proposals);
   return (
     <>
       <HeaderOfComponent title="داشبورد شما">
