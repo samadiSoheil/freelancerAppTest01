@@ -1,7 +1,12 @@
-function Button({ children }) {
+function Button({ children, isDisable = false }) {
   return (
     <>
-      <button className="w-full btn btn--primery">{children}</button>
+      <button
+        disabled={isDisable}
+        className={`w-full btn btn--primery ${isDisable ? "opacity-50" : ""}`}
+      >
+        {children}
+      </button>
     </>
   );
 }

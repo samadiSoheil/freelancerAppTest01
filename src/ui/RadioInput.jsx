@@ -12,7 +12,10 @@ const RadioInput = ({ data, register, errors }) => {
               value={item.rule}
               {...register(item.name, { required: "مشخص کردن وضعیت شما ضروری است" })}
             />
-            <label htmlFor={item.rule} className="cursor-pointer">
+            <label
+              htmlFor={item.rule}
+              className="cursor-pointer text-secondary-800 dark:text-secondary-400"
+            >
               {item.lableInput}
             </label>
           </div>

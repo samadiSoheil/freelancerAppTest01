@@ -1,6 +1,5 @@
 import { useState } from "react";
 import Modal from "../../../ui/modal/Modal";
-import ChangeProposalStatus from "../../project/ChangeProposalStatus";
 import ChangeUserStatus from "./ChangeUserStatus";
 
 const UsersRow = ({ item, index }) => {
