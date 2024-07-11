@@ -5,7 +5,7 @@ import Loading from "../../ui/Loading";
 const SendOTPForm = ({ register, isPending, getOtpHandler, errors }) => {
   return (
     <>
-      <div className="w-full">
+      <div className="w-full  dark:bg-secondary-800">
         <form onSubmit={getOtpHandler} className="space-y-5">
           <TextField
             id="phoneNumber"

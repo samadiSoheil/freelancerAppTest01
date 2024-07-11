@@ -54,7 +54,7 @@ const CompleteProfileForm = () => {
   };
   return (
     <>
-      <div className="w-full">
+      <div className="w-full  dark:bg-secondary-800">
         <form className="space-y-8" onSubmit={handleSubmit(submitHandler)}>
           <TextField
             id="userNameInput"
