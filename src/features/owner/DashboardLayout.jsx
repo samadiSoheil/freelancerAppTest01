@@ -3,11 +3,12 @@ import Loading from "../../ui/Loading";
 import HeaderOfComponent from "../../ui/AppLauout/HeaderOfComponent";
 import BackPageBtn from "../../ui/AppLauout/BackPageBtn";
 import Stats from "./Stats";
+import EptyIllustration from "../../ui/EptyIllustration";
 
 const DashboardLayout = () => {
   const { isPending, projects } = useOwnerProject();
   if (isPending) return <Loading />;
-  if (!projects.length) return <p>شما پروژه ای ندارید...</p>;
+  if (!projects.length) return <EptyIllustration />;
 
   return (
     <>

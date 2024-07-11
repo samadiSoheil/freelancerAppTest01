@@ -15,7 +15,7 @@ const ProposalsRow = ({ item, index, projectTitle }) => {
         <div className="projects__table-title">{item.description}</div>
       </td>
       <td>{item.duration}</td>
-      <td>{item.price}</td>
+      <td>{item.price.toLocaleString("fa-IR")}</td>
       <td>
         <span
           className={`badge ${

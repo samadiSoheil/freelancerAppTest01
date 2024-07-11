@@ -1,8 +1,10 @@
 import { HiMiniArrowsPointingOut, HiSquare3Stack3D } from "react-icons/hi2";
 import { HiOutlineCreditCard } from "react-icons/hi2";
 import Stat from "../owner/Stat";
+import EptyIllustration from "../../ui/EptyIllustration";
 
 const Stats = ({ proposals }) => {
+  if (!proposals.length) return <EptyIllustration />;
   const numOfProjects = proposals.length;
   const numOfOpenProjects = proposals.filter((p) => p.status == 2).length;
   const numOfProposals = proposals

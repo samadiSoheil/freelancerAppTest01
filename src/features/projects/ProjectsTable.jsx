@@ -1,4 +1,5 @@
 import { useAllProjects } from "../../hook/useAllProjects";
+import EptyIllustration from "../../ui/EptyIllustration";
 import Loading from "../../ui/Loading";
 import Table from "../../ui/table/Table";
 import ProjectRow from "./ProjectRow";
@@ -8,7 +9,8 @@ const ProjectsTable = ({ isAdmin = false }) => {
   const { isPending: isLoading, projects: projectsForOwner } = useOwnerProject();
   const { projects, isPending } = useAllProjects();
   if (isLoading || isPending) return <Loading />;
-  if (!projectsForOwner?.length || !projects.length) return <p>هیچی نیست...</p>;
+  if (!isAdmin && !projectsForOwner?.length) return <EptyIllustration />;
+  if (isAdmin && !projects.length) return <EptyIllustration />;
   let arrayToMap = isAdmin ? projects : projectsForOwner;
   return (
     <>

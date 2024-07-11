@@ -1,9 +1,10 @@
+import EptyIllustration from "../../ui/EptyIllustration";
 import Table from "../../ui/table/Table";
 import ProposalsRow from "./ProposalsRow";
 
 const ProposalTable = ({ project }) => {
   const { proposals } = project;
-  if (!proposals.length) return <p>nothing here...</p>;
+  if (!proposals.length) return <EptyIllustration />;
   return (
     <>
       <Table>

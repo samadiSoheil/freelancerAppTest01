@@ -3,11 +3,12 @@ import Table from "../../ui/table/Table";
 import { useProposals } from "./useProposals";
 import ProposalsRow from "./ProposalRow";
 import Loading from "../../ui/Loading";
+import EptyIllustration from "../../ui/EptyIllustration";
 
 const ProposalsTable = () => {
   const { proposals, isPending } = useProposals();
   if (isPending) return <Loading />;
-  if (!proposals.length) return <p>درخواستی وجود ندارد...</p>;
+  if (!proposals.length) return <EptyIllustration />;
 
   return (
     <>
