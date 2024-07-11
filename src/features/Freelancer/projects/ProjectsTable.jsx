@@ -1,4 +1,5 @@
 import { useAllProjects } from "../../../hook/useAllProjects";
+import EptyIllustration from "../../../ui/EptyIllustration";
 import Loading from "../../../ui/Loading";
 import Table from "../../../ui/table/Table";
 import ProjectRow from "./ProjectRow";
@@ -6,6 +7,8 @@ import ProjectRow from "./ProjectRow";
 const ProjectsTable = () => {
   const { projects, isPending } = useAllProjects();
   if (isPending) return <Loading />;
+  if (!projects.length) return <EptyIllustration />;
+
   return (
     <>
       <Table>

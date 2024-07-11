@@ -1,3 +1,4 @@
+import EptyIllustration from "../../../ui/EptyIllustration";
 import Loading from "../../../ui/Loading";
 import Table from "../../../ui/table/Table";
 import { useAllUsers } from "../useAllUsers";
@@ -6,7 +7,7 @@ import UsersRow from "./UsersRow";
 const UsersTable = () => {
   const { isPending, users } = useAllUsers();
   if (isPending) return <Loading />;
-  if (!users.length) return <p>درخواستی وجود ندارد...</p>;
+  if (!users.length) return <EptyIllustration />;
   return (
     <>
       <Table>
