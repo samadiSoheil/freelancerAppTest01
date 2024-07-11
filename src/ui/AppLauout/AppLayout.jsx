@@ -10,10 +10,8 @@ const AppLayout = ({ children }) => {
         <div>
           <Header />
           {/* MAIN CONTENT */}
-          <div className="w-full lg:pr-[250px] dark:bg-secondary-800">
-            <div className="w-full">
-              <div className="container">{<Outlet />}</div>
-            </div>
+          <div className="w-full lg:pr-[250px] dark:bg-secondary-800  pb-20">
+            <div className="container">{<Outlet />}</div>
           </div>
         </div>
       </div>

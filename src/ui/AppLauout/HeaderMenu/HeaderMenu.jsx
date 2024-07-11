@@ -6,7 +6,7 @@ import DarkModeToggle from "./DarkModeToggle";
 const HeaderMenu = () => {
   return (
     <>
-      <ul className="flex gap-2">
+      <ul className="flex gap-2 -ml-2">
         <li className="nav__item">
           <Link>
             <HiOutlineUser className="size-6" />
